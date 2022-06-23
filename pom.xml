@@ -39,7 +39,6 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.11</version>
-            <scope>Runtime</scope>
         </dependency>
     </dependencies>
 

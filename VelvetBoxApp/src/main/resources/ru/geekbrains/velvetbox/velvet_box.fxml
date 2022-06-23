@@ -16,7 +16,8 @@
       <menus>
         <Menu mnemonicParsing="false" text="Файл">
           <items>
-            <MenuItem fx:id="MenuExitButton" mnemonicParsing="false" onAction="#MenuExitButtonOnClick" text="Выход" />
+            <MenuItem fx:id="MenuRegisterButton" mnemonicParsing="false" onAction="#MenuRegisterButtonOnClick" text="Зарегистрироваться" />
+                  <MenuItem fx:id="MenuExitButton" mnemonicParsing="false" onAction="#MenuExitButtonOnClick" text="Выход" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Помощь">

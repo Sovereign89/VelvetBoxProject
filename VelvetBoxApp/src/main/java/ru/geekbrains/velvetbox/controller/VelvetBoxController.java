@@ -17,10 +17,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 import ru.geekbrains.velvetbox.VelvetBox;
-import ru.geekbrains.velvetbox.global.FileMessage;
-import ru.geekbrains.velvetbox.global.FileRequest;
-import ru.geekbrains.velvetbox.global.GlobalMessagingService;
-import ru.geekbrains.velvetbox.global.ListFiles;
+import ru.geekbrains.velvetbox.global.*;
 import ru.geekbrains.velvetbox.network.Network;
 
 import java.io.File;
@@ -37,6 +34,8 @@ public class VelvetBoxController implements Initializable {
 
     private static final String CLASS_NAME_VARIABLE = "[" + VelvetBoxController.class.getName() + "]";
     @FXML
+    MenuItem MenuRegisterButton;
+    @FXML
     SplitPane SplitPaneFiles;
     @FXML
     Label ClientFilesLabel;
@@ -51,9 +50,31 @@ public class VelvetBoxController implements Initializable {
     @FXML
     ListView<String> ServerFiles;
 
+    private String usersDirectory = "Users";
     private String homeDirectory;
     private String rootDirectory;
     private Network network;
+    private User currentUser = null;
+
+    public void init(String folderName) {
+        try {
+            homeDirectory = usersDirectory+"\\"+folderName;
+            rootDirectory = homeDirectory;
+            File clientDir = new File(String.valueOf(homeDirectory));
+            if (!clientDir.exists()){
+                clientDir.mkdir();
+            }
+            SplitPaneFiles.setVisible(true);
+            ClientFiles.getItems().clear();
+            ClientFiles.getItems().addAll(getFiles(homeDirectory,homeDirectory.equals(rootDirectory)));
+            network = new Network(8189);
+            Thread readThread = new Thread(this::readLoop);
+            readThread.setDaemon(true);
+            readThread.start();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+    }
 
     private void dragAndDropClientServer() {
         dragAndDrop(ClientFiles, ServerFiles);
@@ -222,6 +243,7 @@ public class VelvetBoxController implements Initializable {
                     Platform.runLater(() -> {
                         ServerFiles.getItems().clear();
                         ServerFiles.getItems().addAll(listFiles.getFiles());
+                        ServerFiles.refresh();
                     });
                 } else if (message instanceof FileMessage fileMessage) {
                     Path current = Path.of(homeDirectory).resolve(fileMessage.getName());
@@ -229,6 +251,7 @@ public class VelvetBoxController implements Initializable {
                     Platform.runLater(() -> {
                         ClientFiles.getItems().clear();
                         ClientFiles.getItems().addAll(getFiles(homeDirectory, homeDirectory.equals(rootDirectory)));
+                        ClientFiles.refresh();
                     });
                 }
             }
@@ -257,18 +280,11 @@ public class VelvetBoxController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            homeDirectory = "ClientFiles";
-            rootDirectory = homeDirectory;
-            File clientDir = new File(String.valueOf(homeDirectory));
+            File clientDir = new File(String.valueOf(usersDirectory));
             if (!clientDir.exists()){
                 clientDir.mkdir();
             }
-            ClientFiles.getItems().clear();
-            ClientFiles.getItems().addAll(getFiles(homeDirectory,homeDirectory.equals(rootDirectory)));
-            network = new Network(8189);
-            Thread readThread = new Thread(this::readLoop);
-            readThread.setDaemon(true);
-            readThread.start();
+            SplitPaneFiles.setVisible(false);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -303,4 +319,35 @@ public class VelvetBoxController implements Initializable {
         }
     }
 
+    public void MenuRegisterButtonOnClick(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("register.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            RegisterController registerController = fxmlLoader.getController();
+            Stage stage = new Stage();
+            Scene scene = new Scene(root,330,160);
+            stage.setScene(scene);
+            scene.addEventFilter(KeyEvent.KEY_PRESSED, evt -> {
+                if (evt.getCode().equals(KeyCode.ESCAPE)) {
+                    stage.close();
+                }
+            });
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.getIcons().add(new Image(VelvetBox.class.getResourceAsStream("icons/velvetbox.png")));
+            stage.setResizable(false);
+            stage.setTitle("Зарегистрироваться");
+            stage.setAlwaysOnTop(true);
+            stage.showAndWait();
+            if (registerController.isRegistered) {
+                currentUser = registerController.currentUser;
+                init(currentUser.getLogin());
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
 }

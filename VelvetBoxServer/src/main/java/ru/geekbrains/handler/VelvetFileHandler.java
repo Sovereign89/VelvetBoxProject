@@ -16,7 +16,7 @@ public class VelvetFileHandler extends SimpleChannelInboundHandler<GlobalMessagi
     private Path rootDir;
 
     public VelvetFileHandler() {
-        currentDir = Path.of("ServerFiles");
+        currentDir = Path.of("ServerUsers");
         rootDir = currentDir;
         File serverDir = new File(String.valueOf(currentDir));
         if (!serverDir.exists()){

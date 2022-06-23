@@ -5,48 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e3fa050-bbf9-46ff-ad87-5ae4610bd5b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientFiles/TestFile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/VelvetBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/AboutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/ConfirmController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/VelvetBoxController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/network/Network.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/about.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/confirm_dialog.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/icons/velvetbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/velvet_box.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/FileMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/FileRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/GlobalMessagingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/ListFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxServer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/ru/geekbrains/VelvetBoxServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/ru/geekbrains/handler/VelvetFileHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VelvetBoxServer/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/AuthorizationResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/RegisterResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/velvet_box.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/velvet_box_server.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vbdb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientFiles/TestFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Users/Back/Новый текстовый документ.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VelvetBoxGlobal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxGlobal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VelvetBoxServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/ru/geekbrains/handler/VelvetFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/ru/geekbrains/handler/VelvetFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +35,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/VelvetBoxApp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/VelvetBox.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/VelvetBoxController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/velvet_box.fxml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -77,25 +54,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_directory_selection": "C:/Java/Java-4/VelvetBoxProject/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox",
-    "last_opened_file_path": "C:/Java/Java-4/VelvetBoxProject/VelvetBoxServer/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Java/Java-4/VelvetBoxProject/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java/Java-4/VelvetBoxProject/VelvetBoxServer/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.geekbrains.velvetbox.global" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Java\Java-4\VelvetBoxProject\VelvetBoxServer\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Java\Java-4\VelvetBoxProject\VelvetBoxGlobal" />
+      <recent name="C:\Java\Java-4\VelvetBoxProject\VelvetBoxGlobal\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.ru.geekbrains.velvetbox.VelvetBox">

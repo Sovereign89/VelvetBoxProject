@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="110.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.velvetbox.controller.AuthorizeController">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="44.0" text="Логин:" />
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="44.0" prefHeight="17.0" prefWidth="44.0" text="Пароль:" />
+      <TextField fx:id="LoginField" layoutX="66.0" layoutY="10.0" onKeyPressed="#LoginFieldOnKeyPressed" prefHeight="25.0" prefWidth="172.0" />
+      <PasswordField fx:id="PasswordField" layoutX="66.0" layoutY="40.0" onKeyPressed="#PasswordFieldOnKeyPressed" prefHeight="25.0" prefWidth="172.0" />
+      <Button fx:id="AuthButton" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#AuthButtonAction" onKeyPressed="#AuthButtonOnKeyPressed" prefHeight="25.0" prefWidth="115.0" text="Войти" />
+      <Button fx:id="CancelButton" layoutX="136.0" layoutY="75.0" mnemonicParsing="false" onAction="#CancelButtonAction" onKeyPressed="#CancelButtonOnKeyPressed" prefHeight="25.0" prefWidth="102.0" text="Отмена" />
+   </children>
+</AnchorPane>

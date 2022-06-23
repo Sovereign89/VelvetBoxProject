@@ -4,7 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -20,10 +22,12 @@ public class VelvetBox extends Application {
                 .getName() + ") ";
 
         log.info(CURRENT_METHOD_NAME + "Started");
-        FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("velvet_box.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("authorize.fxml"));
         stage.getIcons().add(new Image(VelvetBox.class.getResourceAsStream("icons/velvetbox.png")));
         stage.setTitle("VelvetBox");
-        stage.setScene(new Scene(fxmlLoader.load(), 800, 600));
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setAlwaysOnTop(true);
+        stage.setScene(new Scene(fxmlLoader.load(), 250, 110));
         stage.show();
     }
 

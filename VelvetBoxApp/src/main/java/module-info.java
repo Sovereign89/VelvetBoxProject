@@ -6,6 +6,7 @@ module ru.geekbrains.velvetbox {
     requires io.netty.codec;
     requires VelvetBoxGlobal;
     requires lombok;
+    requires java.sql;
 
     opens ru.geekbrains.velvetbox to javafx.fxml;
     exports ru.geekbrains.velvetbox;
