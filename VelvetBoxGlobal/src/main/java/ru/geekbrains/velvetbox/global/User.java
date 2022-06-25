@@ -2,7 +2,7 @@ package ru.geekbrains.velvetbox.global;
 
 import java.util.Base64;
 
-public class User {
+public class User implements GlobalMessagingService {
     private String name;
     private String login;
     private String password;

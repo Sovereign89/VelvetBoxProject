@@ -8,6 +8,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
+import ru.geekbrains.velvetbox.controller.AuthorizeController;
+import ru.geekbrains.velvetbox.controller.VelvetBoxController;
 
 import java.io.IOException;
 @Slf4j
@@ -28,6 +30,8 @@ public class VelvetBox extends Application {
         stage.initStyle(StageStyle.UTILITY);
         stage.setAlwaysOnTop(true);
         stage.setScene(new Scene(fxmlLoader.load(), 250, 110));
+        AuthorizeController authorizeController = fxmlLoader.getController();
+        authorizeController.setFirst(true);
         stage.show();
     }
 

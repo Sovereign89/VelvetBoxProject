@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import ru.geekbrains.velvetbox.VelvetBox;
 import ru.geekbrains.velvetbox.global.AuthorizationResult;
 import ru.geekbrains.velvetbox.global.Database;
-import ru.geekbrains.velvetbox.global.RegisterResult;
 import ru.geekbrains.velvetbox.global.User;
 
 public class AuthorizeController {
@@ -21,6 +20,17 @@ public class AuthorizeController {
     @FXML public PasswordField PasswordField;
     @FXML public Button AuthButton;
     @FXML public Button CancelButton;
+
+    private boolean isFirst = false;
+
+    private User authUser;
+
+    public void setFirst(boolean first) {
+        isFirst = first;
+    }
+    public User getAuthUser() {
+        return authUser;
+    }
 
     public void LoginFieldOnKeyPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
@@ -34,6 +44,28 @@ public class AuthorizeController {
         }
     }
 
+    private void cancelAction() {
+        Stage currentStage = (Stage) CancelButton.getScene().getWindow();
+        try {
+            if (isFirst) {
+                FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("velvet_box.fxml"));
+                Stage stage = new Stage();
+                stage.getIcons().add(new Image(VelvetBox.class.getResourceAsStream("icons/velvetbox.png")));
+                stage.setTitle("VelvetBox");
+                stage.setScene(new Scene(fxmlLoader.load(), 800, 600));
+                stage.show();
+            }
+            currentStage.close();
+        } catch (Exception e) {
+            if (isFirst) {
+                Platform.exit();
+            } else {
+                e.printStackTrace();
+                currentStage.close();
+            }
+        }
+    }
+
     private void authUser() {
         try {
             Stage currentStage = (Stage) CancelButton.getScene().getWindow();
@@ -41,15 +73,18 @@ public class AuthorizeController {
             User user = new User(LoginField.getText(),PasswordField.getText());
             AuthorizationResult authorizationResult = database.authorization(user);
             if (authorizationResult.getResult() && authorizationResult.getResultCode() == 1) {
-                FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("velvet_box.fxml"));
-                Stage stage = new Stage();
-                stage.getIcons().add(new Image(VelvetBox.class.getResourceAsStream("icons/velvetbox.png")));
-                stage.setTitle("VelvetBox");
-                stage.setScene(new Scene(fxmlLoader.load(), 800, 600));
-                VelvetBoxController velvetBoxController = fxmlLoader.getController();
-                velvetBoxController.setCurrentUser(authorizationResult.getUser());
-                velvetBoxController.init(authorizationResult.getUser().getLogin());
-                stage.show();
+                authUser = authorizationResult.getUser();
+                if (isFirst) {
+                    FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("velvet_box.fxml"));
+                    Stage stage = new Stage();
+                    stage.getIcons().add(new Image(VelvetBox.class.getResourceAsStream("icons/velvetbox.png")));
+                    stage.setTitle("VelvetBox");
+                    stage.setScene(new Scene(fxmlLoader.load(), 800, 600));
+                    VelvetBoxController velvetBoxController = fxmlLoader.getController();
+                    velvetBoxController.setCurrentUser(authorizationResult.getUser());
+                    velvetBoxController.init(authorizationResult.getUser());
+                    stage.show();
+                }
                 currentStage.close();
             } else if (authorizationResult.getResultCode() != 1) {
                 Platform.runLater(new Runnable() {
@@ -86,10 +121,10 @@ public class AuthorizeController {
     }
 
     public void CancelButtonAction(ActionEvent actionEvent) {
-        Platform.exit();
+        cancelAction();
     }
 
     public void CancelButtonOnKeyPressed(KeyEvent keyEvent) {
-        Platform.exit();
+        cancelAction();
     }
 }

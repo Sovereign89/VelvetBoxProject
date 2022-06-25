@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
 import ru.geekbrains.velvetbox.VelvetBox;
 import ru.geekbrains.velvetbox.global.*;
@@ -33,6 +34,13 @@ import java.util.ResourceBundle;
 public class VelvetBoxController implements Initializable {
 
     private static final String CLASS_NAME_VARIABLE = "[" + VelvetBoxController.class.getName() + "]";
+    private final String AUTH_LABEL_TEXT = "Пользователь: ";
+    @FXML
+    MenuItem MenuRefreshButton;
+    @FXML
+    MenuItem MenuAuthButton;
+    @FXML
+    Label AuthLabel;
     @FXML
     MenuItem MenuRegisterButton;
     @FXML
@@ -56,9 +64,10 @@ public class VelvetBoxController implements Initializable {
     private Network network;
     private User currentUser = null;
 
-    public void init(String folderName) {
+    public void init(User user) {
         try {
-            homeDirectory = usersDirectory+"\\"+folderName;
+            AuthLabel.setText(AUTH_LABEL_TEXT+user.getName());
+            homeDirectory = usersDirectory+"\\"+user.getLogin();
             rootDirectory = homeDirectory;
             File clientDir = new File(String.valueOf(homeDirectory));
             if (!clientDir.exists()){
@@ -71,6 +80,7 @@ public class VelvetBoxController implements Initializable {
             Thread readThread = new Thread(this::readLoop);
             readThread.setDaemon(true);
             readThread.start();
+            network.write(user);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -340,7 +350,7 @@ public class VelvetBoxController implements Initializable {
             stage.showAndWait();
             if (registerController.isRegistered) {
                 currentUser = registerController.currentUser;
-                init(currentUser.getLogin());
+                init(currentUser);
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -349,5 +359,27 @@ public class VelvetBoxController implements Initializable {
 
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public void MenuAuthButtonOnClick(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(VelvetBox.class.getResource("authorize.fxml"));
+            Stage stage = new Stage();
+            stage.getIcons().add(new Image(VelvetBox.class.getResourceAsStream("icons/velvetbox.png")));
+            stage.setTitle("VelvetBox");
+            stage.initStyle(StageStyle.UTILITY);
+            stage.setAlwaysOnTop(true);
+            stage.setScene(new Scene(fxmlLoader.load(), 250, 110));
+            stage.showAndWait();
+            AuthorizeController authorizeController = fxmlLoader.getController();
+            setCurrentUser(authorizeController.getAuthUser());
+            init(authorizeController.getAuthUser());
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void MenuRefreshButtonOnClick(ActionEvent actionEvent) {
+
     }
 }
