@@ -10,9 +10,11 @@ public class Database {
     }
 
     private void connect() throws SQLException {
-        connection = DriverManager.getConnection("jdbc:sqlite:vbdb.db");
-        connection.setAutoCommit(false);
-        System.out.println("Connected to DB successfully");
+        if (connection == null) {
+            connection = DriverManager.getConnection("jdbc:sqlite:vbdb.db");
+            connection.setAutoCommit(false);
+            System.out.println("Connected to DB successfully");
+        }
     }
 
     private void disconnect() throws SQLException {
@@ -27,8 +29,10 @@ public class Database {
                     user.getLogin(),user.getPassword()));
             while (rs.next()) {
                 User foundUser = new User(rs.getString("NAME"),rs.getString("LOGIN"),rs.getString("PASSWORD"));
-              return new AuthorizationResult(true,foundUser,1);
+                disconnect();
+                return new AuthorizationResult(true,foundUser,1);
             }
+            disconnect();
             return new AuthorizationResult(true,null,0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -51,6 +55,7 @@ public class Database {
             statement.executeUpdate(String.format("INSERT INTO USERS (NAME,LOGIN,PASSWORD) VALUES ('%s','%s','%s')",
                     user.getName(), user.getLogin(), user.getPassword()));
             connection.commit();
+            disconnect();
             return new RegisterResult(true,"Успешно",1);
         } catch (SQLException e) {
             e.printStackTrace();

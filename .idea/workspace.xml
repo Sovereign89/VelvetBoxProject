@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e3fa050-bbf9-46ff-ad87-5ae4610bd5b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ServerUsers/1/TestFile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/velvet_box.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/velvet_box_server.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vbdb.db-journal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/VelvetBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/VelvetBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/AuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/AuthorizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/VelvetBoxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox/controller/VelvetBoxController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/about.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/about.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/velvet_box.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxApp/src/main/resources/ru/geekbrains/velvetbox/velvet_box.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/ru/geekbrains/handler/VelvetFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxServer/src/main/java/ru/geekbrains/handler/VelvetFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vbdb.db" beforeDir="false" afterPath="$PROJECT_DIR$/vbdb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/VelvetBoxGlobal/src/main/java/ru/geekbrains/velvetbox/global/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/velvet_box.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/velvet_box.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/velvet_box_server.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/velvet_box_server.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,26 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_directory_selection": "C:/Java/Java-4/VelvetBoxProject/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox",
-    "last_opened_file_path": "C:/Java/Java-4/VelvetBoxProject/VelvetBoxServer/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Java/Java-4/VelvetBoxProject/VelvetBoxApp/src/main/java/ru/geekbrains/velvetbox&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java/Java-4/VelvetBoxProject/VelvetBoxServer/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.geekbrains.velvetbox.global" />
@@ -132,7 +123,7 @@
       <workItem from="1654973194203" duration="2372000" />
       <workItem from="1655055176168" duration="8160000" />
       <workItem from="1656139746650" duration="176000" />
-      <workItem from="1656170735779" duration="4520000" />
+      <workItem from="1656170735779" duration="5440000" />
     </task>
     <servers />
   </component>
