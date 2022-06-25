@@ -16,8 +16,15 @@
       <menus>
         <Menu mnemonicParsing="false" text="Файл">
           <items>
-            <MenuItem fx:id="MenuExitButton" mnemonicParsing="false" onAction="#MenuExitButtonOnClick" text="Выход" />
+              <MenuItem fx:id="MenuAuthButton" mnemonicParsing="false" onAction="#MenuAuthButtonOnClick" text="Авторизоваться" />
+              <MenuItem fx:id="MenuRegisterButton" mnemonicParsing="false" onAction="#MenuRegisterButtonOnClick" text="Зарегистрироваться" />
+              <MenuItem fx:id="MenuExitButton" mnemonicParsing="false" onAction="#MenuExitButtonOnClick" text="Выход" />
           </items>
+        </Menu>
+        <Menu mnemonicParsing="false"  text="Работа с файлами">
+            <items>
+                <MenuItem fx:id="MenuRefreshButton" mnemonicParsing="false" onAction="#MenuRefreshButtonOnClick" text="Обновить файлы" />
+            </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Помощь">
           <items>
@@ -54,5 +61,10 @@
             </SplitPane>
          </children>
     </AnchorPane>
+      <Label fx:id="AuthLabel" prefHeight="17.0" prefWidth="899.0" text="Пользователь: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
   </children>
 </VBox>

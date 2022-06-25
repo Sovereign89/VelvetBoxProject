@@ -12,7 +12,7 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Label alignment="TOP_LEFT" layoutX="9.0" layoutY="9.0" prefHeight="185.0" prefWidth="310.0" style="-fx-text-fill: #34032B;" text="Это Файл Менеджер написанный на Java с использованием JavaFX. &#10;&#10;Автор и разработчик: Листопадов Александр Сергеевич.&#10;&#10;E-mail: rogue1989@mail.ru&#10;Telegram: @Burntwood" textAlignment="JUSTIFY" wrapText="true">
+      <Label alignment="TOP_LEFT" layoutX="9.0" layoutY="9.0" prefHeight="185.0" prefWidth="310.0" style="-fx-text-fill: #34032B;" text="Это Файл Менеджер (версия 1.0) написанный на Java с использованием JavaFX. &#10;&#10;Автор и разработчик: Листопадов Александр Сергеевич.&#10;&#10;E-mail: rogue1989@mail.ru&#10;Telegram: @Burntwood" textAlignment="JUSTIFY" wrapText="true">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
